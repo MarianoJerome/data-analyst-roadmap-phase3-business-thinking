@@ -47,6 +47,18 @@ Para ma-verify ito, kailangang kunin sa data:
 
 Table: `sales_transactions` (order_id, branch, order_date, customer_id, unit_price, quantity, revenue)
 
+**Sample Data:**
+
+| order_id | branch | order_date | customer_id | unit_price | quantity | revenue |
+|---|---|---|---|---|---|---|
+| 1001 | Branch A | 2025-10-05 | C001 | 500 | 2 | 1000 |
+| 1002 | Branch B | 2025-10-12 | C002 | 500 | 1 | 500 |
+| 1003 | Branch A | 2025-10-20 | C003 | 500 | 3 | 1500 |
+| 1004 | Branch A | 2025-11-03 | C001 | 600 | 1 | 600 |
+| 1005 | Branch B | 2025-11-10 | C004 | 600 | 1 | 600 |
+| 1006 | Branch C | 2025-11-15 | C005 | 600 | 2 | 1200 |
+| ... | ... | ... | ... | ... | ... | ... |
+
 ## SQL Query
 
 ```sql
@@ -65,7 +77,7 @@ Mga desisyon sa likod ng query:
 - Ginamit ang `AVG(unit_price)` para makita kung tumaas ba talaga ang presyo per unit.
 - Ginamit ang `COUNT(order_id)` para bilangin ang orders, order_id ang ginamit dahil unique identifier ito ng bawat transaction, hindi quantity na bilang ng piraso lang.
 
-## Resulta
+## Result
 
 | order_month | total_revenue | average_price | order_count |
 |---|---|---|---|
